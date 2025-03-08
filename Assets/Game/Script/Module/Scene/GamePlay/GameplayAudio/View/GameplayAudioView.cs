@@ -19,7 +19,7 @@ namespace Roguelike.Module.GameplayAudio {
         }
 
         public void PlayLevelUpSfx() {
-            _bgmSfx.Play();
+            _levelUpSfx.Play();
         }
 
         public void PlayGameOverSfx() {

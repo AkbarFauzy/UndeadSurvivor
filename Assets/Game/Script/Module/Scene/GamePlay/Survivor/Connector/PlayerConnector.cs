@@ -12,6 +12,7 @@ namespace Roguelike.Module.Player
             Subscribe<PickupExpOrbMessage>(_player.OnPickupExp);
             Subscribe<MovePlayerMessage>(_player.OnMovePlayer);
             Subscribe<PlayerTakeDamageMessage>(_player.PlayerTakeDamage);
+            Subscribe<PlayerRestoreHealthMessage>(_player.PlayerRestoreHealth);
         }
 
         protected override void Disconnect()
@@ -19,6 +20,7 @@ namespace Roguelike.Module.Player
             Unsubscribe<PickupExpOrbMessage>(_player.OnPickupExp);
             Unsubscribe<MovePlayerMessage>(_player.OnMovePlayer);
             Unsubscribe<PlayerTakeDamageMessage>(_player.PlayerTakeDamage);
+            Unsubscribe<PlayerRestoreHealthMessage>(_player.PlayerRestoreHealth);
         }
     }
 }

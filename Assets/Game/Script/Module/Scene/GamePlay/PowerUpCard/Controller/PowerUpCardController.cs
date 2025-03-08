@@ -15,7 +15,6 @@ namespace Roguelike.Module.HUD
             _model = model;
             _hud = hud;
             SetView(view);
-            Debug.Log(_view == null);
         }
 
         public override void SetView(PowerUpCardView view)
@@ -23,8 +22,6 @@ namespace Roguelike.Module.HUD
             base.SetView(view);
             _view = view;
             view.SetCallbacks(OnClickCard);
-            Debug.Log("this", view);
-            Debug.Log(_view == null);
         }
 
         public void UpdateCard(WeaponController weapon) {

@@ -11,7 +11,7 @@ namespace Roguelike.Module.Player {
         public float Speed { get; private set; } = 5f;
         public float MagnetRange { get; private set; } = 10f;
 
-        public void TakeDamage(float damage) 
+        public void TakeDamage(float damage)
         {
             CurrentHealth -= damage;
             SetDataAsDirty();
@@ -21,6 +21,12 @@ namespace Roguelike.Module.Player {
         {
             MaxHealth = value;
             CurrentHealth = value;
+            SetDataAsDirty();
+        }
+
+        public void RestoreMaxHealth()
+        {
+            CurrentHealth = MaxHealth;
             SetDataAsDirty();
         }
 

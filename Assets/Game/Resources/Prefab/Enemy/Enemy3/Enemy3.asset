@@ -17,5 +17,5 @@ MonoBehaviour:
   Exp: 3
   Health: 10
   PoolSize: 20
-  SpawnAt: 60
+  SpawnAt: 120
   IsRespawn: 1

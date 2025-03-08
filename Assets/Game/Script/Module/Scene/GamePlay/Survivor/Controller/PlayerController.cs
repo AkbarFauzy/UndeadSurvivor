@@ -44,6 +44,11 @@ namespace Roguelike.Module.Player
             }
         }
 
+        public void PlayerRestoreHealth(PlayerRestoreHealthMessage message)
+        {
+            _model.RestoreMaxHealth();
+        }
+
         private void OnTriggerItem(GameObject triggeredItem) {
             Publish<TriggerItemMessage>(new TriggerItemMessage(triggeredItem));
         }

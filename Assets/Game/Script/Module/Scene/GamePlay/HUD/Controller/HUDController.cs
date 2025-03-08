@@ -24,7 +24,6 @@ namespace Roguelike.Module.HUD
         {
             for (int i = 0; i < 3; i++)
             {
-                Debug.Log("PowerUpCard Init");
                 GameObject card = GameObject.Instantiate(_view.powerUpCardPrefab, _view.powerUpPanel.transform);
                 PowerUpCardView cardView = card.GetComponent<PowerUpCardView>();
                 PowerUpCardModel cardModel = new PowerUpCardModel();
@@ -39,7 +38,13 @@ namespace Roguelike.Module.HUD
 
         public void OnPlayerLevelUp(PlayerLevelUpMessage message) {
             _model.SetLevel(message.Level);
-            Publish<ShowPowerUpOptionsMessage>(new ShowPowerUpOptionsMessage());
+            if (message.Level < 15)
+            {
+                Publish<ShowPowerUpOptionsMessage>(new ShowPowerUpOptionsMessage());
+            }
+            else {
+                Publish<PlayerRestoreHealthMessage>(new PlayerRestoreHealthMessage());
+            }
         }
 
         public void OnShowPowerUpOptions(ShowPowerUpOptionsMessage message) {
